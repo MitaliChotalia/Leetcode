@@ -1,0 +1,24 @@
+class Solution {
+    public int romanToInt(String s) {
+        int integer = 0 ;
+        int  result = 0 ;
+        for(int i = s.length() - 1 ; i >= 0 ; i--){
+            switch(s.charAt(i)){
+                case 'I' : integer = 1 ; break ;
+                case 'V' : integer = 5 ; break ;
+                case 'X' : integer = 10 ; break ;
+                case 'L': integer = 50; break;
+                case 'C': integer = 100; break;
+                case 'D': integer = 500; break;
+                case 'M': integer = 1000; break;
+            }
+            if(4 * integer < result){
+                result -= integer;
+            }
+            else{
+                result += integer ;
+            }
+        }
+        return result ;
+    }
+}
