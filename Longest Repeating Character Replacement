@@ -1,0 +1,22 @@
+class Solution {
+    public int characterReplacement(String s, int k) {
+        int n = s.length();
+        int char_count[]= new int[26];
+        int l = 0;
+        int len = 0;
+        int max =0;
+        for(int r =0 ; r< n ; r++){
+            char_count[s.charAt(r) - 'A']++;
+            int curr_char_count = char_count[s.charAt(r)  - 'A'];
+            max = Math.max(max, curr_char_count);
+
+            while(r - l - max +1 >k){
+                char_count[s.charAt(l) - 'A']--;
+                l++;
+            }
+            len = Math.max(len, r - l +1);
+        }
+        return len;
+        
+    }
+}
