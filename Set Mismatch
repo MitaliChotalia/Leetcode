@@ -1,0 +1,14 @@
+class Solution {
+    public int[] findErrorNums(int[] nums) {
+         int[] freq = new int[nums.length + 1];
+        for(int i : nums){
+            freq[i]++;
+        }
+        int x =0;
+        int y= 0;
+        for(int i =1; i<freq.length ; i++){
+            if(freq[i] == 2) x= i;
+            if(freq[i] == 0) y = i;        }
+        return new int[]{x,y};
+    }
+}
