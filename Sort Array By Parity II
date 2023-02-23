@@ -1,0 +1,18 @@
+class Solution {
+    public int[] sortArrayByParityII(int[] nums) {
+        int[] n = new int[nums.length];
+        int l = 0 ;
+        int r = 1 ;
+        for(int i : nums){
+            if(i % 2 == 0){
+                n[l] = i ;
+                l += 2;
+            }
+            else{
+                n[r] = i ;
+                r += 2 ;
+            }
+        }
+        return n ;
+    }
+}
